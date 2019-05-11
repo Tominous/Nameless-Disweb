@@ -24,13 +24,13 @@ $disweb_table = $queries->tableExists('disweb_settings');
 if(empty($disweb_table)) {
     // Setup DB
     $queries->createTable('disweb_settings', "`server` VARCHAR(18) NOT NULL UNIQUE KEY, `channel` VARCHAR(18) NOT NULL UNIQUE KEY, `shard` VARCHAR(255) NOT NULL, PRIMARY KEY (`server`)", "ENGINE=InnoDB DEFAULT CHARSET=latin1");
-    echo 'window.location.replace("/admin/addons/?action=edit&addon=disweb");';
+    echo '<script>window.location.replace("/admin/addons/?action=edit&addon=disweb");</script>';
     die();
 }
 
 $server = "";
 $channel = "";
-$shard = "https://shard.deploys.io";
+$shard = "https://disweb.deploys.io";
 
 $success = false;
 
